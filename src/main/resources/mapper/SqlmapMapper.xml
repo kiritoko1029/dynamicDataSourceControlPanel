@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chencx.dynamicdatabasespringboot.mapper.SqlmapMapper">
+
+    <resultMap id="BaseResultMap" type="com.chencx.dynamicdatabasespringboot.model.domain.Sqlmap">
+            <id property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="poolName" column="poolName" jdbcType="VARCHAR"/>
+            <result property="sqlText" column="sqlText" jdbcType="VARCHAR"/>
+            <result property="args" column="args" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        name,poolName,sqlText,
+        args
+    </sql>
+</mapper>

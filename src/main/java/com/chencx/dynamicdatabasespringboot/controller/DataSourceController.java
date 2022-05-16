@@ -22,8 +22,8 @@ public class DataSourceController {
     // private final DataSourceCreator dataSourceCreator; //3.3.1及以下版本使用这个通用
     @Autowired
     private DefaultDataSourceCreator dataSourceCreator;
-    @GetMapping
-    public Set<String> now() {
+    @GetMapping("getDataSources")
+    public Set<String> nowDataSource() {
         DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
         return ds.getDataSources().keySet();
     }
@@ -37,14 +37,13 @@ public class DataSourceController {
         DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
         DataSource dataSource = dataSourceCreator.createDataSource(dataSourceProperty);
         ds.addDataSource(dto.getPoolName(), dataSource);
-        log.info("添加成功");
         return ds.getDataSources().keySet();
     }
 
-    @DeleteMapping
-    public String remove(String name) {
+    @DeleteMapping("/remove")
+    public Set<String> remove(String name) {
         DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
         ds.removeDataSource(name);
-        return "删除成功";
+        return ds.getDataSources().keySet();
     }
 }

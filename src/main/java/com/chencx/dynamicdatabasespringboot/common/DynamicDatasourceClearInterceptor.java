@@ -1,12 +1,8 @@
 package com.chencx.dynamicdatabasespringboot.common;
 
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
-import com.chencx.dynamicdatabasespringboot.model.domain.TLineName;
-import com.chencx.dynamicdatabasespringboot.service.TLineNameService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

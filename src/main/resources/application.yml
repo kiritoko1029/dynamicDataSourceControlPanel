@@ -1,20 +1,23 @@
 server:
-  # ????????
   port: 8088
 spring:
   thymeleaf:
-  # ???????
   cache: false
   mode: HTML5
   datasource:
     dynamic:
-      primary: master #??????????????,?????master
+      primary: master
       p6spy: true
-      strict: false #???????,??false. true?????????????,false???????
+      strict: false
       datasource:
+        sqLite:
+          driver-class-name: org.sqlite.JDBC
+          url: jdbc:sqlite::resource:sqlite/querySql.db
+          username:
+          password:
         master:
-          url: jdbc:db2://160.0.1.19:50000/appdb
+          url: jdbc:db2://124.223.62.162:50000/testdb
           username: db2inst1
           password: password
-          driver-class-name: com.ibm.db2.jcc.DB2Driver # 3.2.0????SPI??????
+          driver-class-name: com.ibm.db2.jcc.DB2Driver
 
