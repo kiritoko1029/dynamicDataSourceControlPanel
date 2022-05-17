@@ -1,0 +1,122 @@
+# 动态数据源
+
+**注意：1.此控制台和接口只能暴露给开发人员使用；2.为了数据安全只做了查询功能。**
+
+## Web控制台及接口文档
+
+控制台：http://ip:8088
+
+离线接口文档：http://ip:8088/offlineDoc
+
+在线接口文档 ：http://ip:8088/onlineDoc或者https://console-docs.apipost.cn/preview/17de6bd4ab90cd51/6a78ffcb10822da4
+
+## 快速开始
+
+```bas
+nohub java -jar 【你的jar包】 &
+```
+
+
+
+## 连接池篇
+
+### 	新增连接池
+
+#### application.yml配置数据源
+
+```properties
+spring:
+  thymeleaf:
+  cache: false
+  mode: HTML5
+  datasource:
+    dynamic:
+    	#primary-默认数据源
+      primary: master 
+      p6spy: true
+      #strict false 允许空数据源启动
+      strict: false
+      datasource:
+      #sqLite不要乱动，默认存储sql语句信息
+        sqLite:
+          driver-class-name: org.sqlite.JDBC
+          url: jdbc:sqlite::resource:sqlite/querySql.db
+          username:
+          password:
+        master:
+          url: jdbc:db2://124.223.62.162:50000/testdb
+          username: db2inst1
+          password: password
+          driver-class-name: com.ibm.db2.jcc.DB2Driver
+```
+
+
+
+#### 动态新增数据源
+
+```java
+		//通用数据源会根据maven中配置的连接池根据顺序依次选择。
+    //默认的顺序为druid>hikaricp>beecp>dbcp>spring basic
+@PostMapping("/add")
+public Set<String> add(@Validated @RequestBody DataSourceDTO dto) {
+        DataSourceProperty dataSourceProperty = new DataSourceProperty(); 
+        BeanUtils.copyProperties(dto, dataSourceProperty);
+        DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
+        DataSource dataSource = dataSourceCreator.createDataSource(dataSourceProperty);
+        ds.addDataSource(dto.getPoolName(), dataSource);
+        return ds.getDataSources().keySet();
+    }
+```
+
+
+
+### 移除连接池
+
+两行代码
+
+```java
+  DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
+  ds.removeDataSource(name);
+```
+
+### 查询所有连接池
+
+```java
+ DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
+ return ds.getDataSources().keySet();
+```
+
+## SQL篇
+
+### sqlite数据库存储sql信息
+
+```sql
+create table SQLMAP
+(
+    name     text not null /* sql语句别名 */
+        constraint SQLMAP_pk
+            primary key,
+    poolName text not null, /* 连接池名 */
+    sqlText  text not null, /* sql语句 */
+    args     text           /* 相关参数 暂时用不上*/
+);
+```
+
+
+
+### 新增sql信息
+
+接口：/sqlite/add  POST
+
+### 获得所有sql信息
+
+接口 ：/sqlite/getList/ POST
+
+### 移除sql信息
+
+接口 /sqlite/remove/ DELETE
+
+## 更多接口信息
+
+https://console-docs.apipost.cn/preview/17de6bd4ab90cd51/6a78ffcb10822da4
+
