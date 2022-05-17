@@ -40,6 +40,14 @@ public class Sqlite3Controller {
     public List getByList(){
         return sqlite3Service.querySqlList();
     }
+
+    /**
+     * @description  删除sql信息
+     * @author chenxiangcai
+     * @date 2022/5/16 21:43
+     * @param name
+     * @return int
+     */
     @DeleteMapping("/remove")
     public int remove(String name){
         return  sqlite3Service.deleteSqlInfo(name);

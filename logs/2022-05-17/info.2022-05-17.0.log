@@ -1,0 +1,54 @@
+2022-05-17 10:27:08,172 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:55 - Starting DynamicDataBaseSpringBootApplicationTests using Java 1.8.0_332 on chenxiangcaideMacBook-Pro.local with PID 49626 (started by chenxiangcai in /Users/chenxiangcai/Code/DynamicDataSourceSpringBoot)
+2022-05-17 10:27:08,172 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] SpringApplication.java:640 - No active profile set, falling back to 1 default profile: "default"
+2022-05-17 10:27:08,176 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.3.Final
+2022-05-17 10:27:08,783 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - sqLite - Starting...
+2022-05-17 10:27:09,558 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - sqLite - Start completed.
+2022-05-17 10:27:09,561 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - master - Starting...
+2022-05-17 10:27:09,772 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - master - Start completed.
+2022-05-17 10:27:09,773 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [sqLite] success
+2022-05-17 10:27:09,773 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [master] success
+2022-05-17 10:27:09,773 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:228 - dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2022-05-17 10:27:10,250 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:57 - Adding welcome page template: index
+2022-05-17 10:27:10,409 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:61 - Started DynamicDataBaseSpringBootApplicationTests in 2.443 seconds (JVM running for 2.85)
+2022-05-17 10:27:10,551 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:205 - dynamic-datasource start closing ....
+2022-05-17 10:27:10,551 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - sqLite - Shutdown initiated...
+2022-05-17 10:27:10,552 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - sqLite - Shutdown completed.
+2022-05-17 10:27:10,552 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - master - Shutdown initiated...
+2022-05-17 10:27:10,553 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - master - Shutdown completed.
+2022-05-17 10:27:10,553 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:209 - dynamic-datasource all closed success,bye
+2022-05-17 10:28:11,563 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:55 - Starting DynamicDataBaseSpringBootApplicationTests using Java 1.8.0_332 on chenxiangcaideMacBook-Pro.local with PID 50090 (started by chenxiangcai in /Users/chenxiangcai/Code/DynamicDataSourceSpringBoot)
+2022-05-17 10:28:11,564 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] SpringApplication.java:640 - No active profile set, falling back to 1 default profile: "default"
+2022-05-17 10:28:11,568 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.3.Final
+2022-05-17 10:28:12,208 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - sqLite - Starting...
+2022-05-17 10:28:12,667 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - sqLite - Start completed.
+2022-05-17 10:28:12,671 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - master - Starting...
+2022-05-17 10:28:12,869 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - master - Start completed.
+2022-05-17 10:28:12,869 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [sqLite] success
+2022-05-17 10:28:12,869 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [master] success
+2022-05-17 10:28:12,869 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:228 - dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2022-05-17 10:28:13,320 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:57 - Adding welcome page template: index
+2022-05-17 10:28:13,483 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:61 - Started DynamicDataBaseSpringBootApplicationTests in 2.146 seconds (JVM running for 2.572)
+2022-05-17 10:28:13,623 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:205 - dynamic-datasource start closing ....
+2022-05-17 10:28:13,623 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - sqLite - Shutdown initiated...
+2022-05-17 10:28:13,624 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - sqLite - Shutdown completed.
+2022-05-17 10:28:13,624 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - master - Shutdown initiated...
+2022-05-17 10:28:13,625 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - master - Shutdown completed.
+2022-05-17 10:28:13,625 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:209 - dynamic-datasource all closed success,bye
+2022-05-17 10:28:25,531 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:55 - Starting DynamicDataBaseSpringBootApplicationTests using Java 1.8.0_332 on chenxiangcaideMacBook-Pro.local with PID 50201 (started by chenxiangcai in /Users/chenxiangcai/Code/DynamicDataSourceSpringBoot)
+2022-05-17 10:28:25,532 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] SpringApplication.java:640 - No active profile set, falling back to 1 default profile: "default"
+2022-05-17 10:28:25,537 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.3.Final
+2022-05-17 10:28:26,143 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - sqLite - Starting...
+2022-05-17 10:28:26,323 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - sqLite - Start completed.
+2022-05-17 10:28:26,325 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:80 - master - Starting...
+2022-05-17 10:28:26,520 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:82 - master - Start completed.
+2022-05-17 10:28:26,520 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [sqLite] success
+2022-05-17 10:28:26,520 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:148 - dynamic-datasource - add a datasource named [master] success
+2022-05-17 10:28:26,520 [main] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:228 - dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
+2022-05-17 10:28:26,972 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:57 - Adding welcome page template: index
+2022-05-17 10:28:27,128 [main] INFO  [c.c.d.DynamicDataBaseSpringBootApplicationTests] StartupInfoLogger.java:61 - Started DynamicDataBaseSpringBootApplicationTests in 1.802 seconds (JVM running for 2.212)
+2022-05-17 10:28:27,258 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:205 - dynamic-datasource start closing ....
+2022-05-17 10:28:27,258 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - sqLite - Shutdown initiated...
+2022-05-17 10:28:27,259 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - sqLite - Shutdown completed.
+2022-05-17 10:28:27,259 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - master - Shutdown initiated...
+2022-05-17 10:28:27,260 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - master - Shutdown completed.
+2022-05-17 10:28:27,260 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:209 - dynamic-datasource all closed success,bye

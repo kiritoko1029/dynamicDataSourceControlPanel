@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/help")
+@RequestMapping("/")
 public class WebController {
 
     @RequestMapping("/offlineDoc")
@@ -17,7 +17,7 @@ public class WebController {
     public String onlineDoc(){
         return "redirect:https://console-docs.apipost.cn/preview/17de6bd4ab90cd51/6a78ffcb10822da4?target_id=ac9d3206-da6a-4b5a-b53a-53f57ab25a15#ac9d3206-da6a-4b5a-b53a-53f57ab25a15";
     }
-    @RequestMapping("/web")
+    @RequestMapping("/panel")
     public String WebManage(){
         return "index";
     }

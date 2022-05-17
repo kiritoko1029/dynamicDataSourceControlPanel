@@ -7,7 +7,7 @@ spring:
   datasource:
     dynamic:
       primary: master
-      p6spy: true
+      p6spy: false
       strict: false
       datasource:
         sqLite:
@@ -16,8 +16,10 @@ spring:
           username:
           password:
         master:
-          url: jdbc:db2://124.223.62.162:50000/testdb
+          url: jdbc:db2://160.0.1.19:50000/appdb
           username: db2inst1
           password: password
           driver-class-name: com.ibm.db2.jcc.DB2Driver
-
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
