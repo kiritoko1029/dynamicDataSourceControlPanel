@@ -25,8 +25,8 @@ public class Sqlite3ServiceImpl implements Sqlite3Service {
      */
     @Override
     public int addQuerySql(Sqlmap sqlmap) {
-        Object[] args = {sqlmap.getName(), sqlmap.getPoolName(), sqlmap.getSqlText(), sqlmap.getArgs()};
-        return jdbcTemplate.update("insert into SQLMAP (name ,poolName, sqlText,args) VALUES (?,?,?,?)", args);
+        Object[] args = {sqlmap.getName(), sqlmap.getPoolName(), sqlmap.getSqlText(), sqlmap.getArgs(),sqlmap.getComment()};
+        return jdbcTemplate.update("insert into SQLMAP (name ,poolName, sqlText,args,comment) VALUES (?,?,?,?,?)", args);
     }
 
     @Override

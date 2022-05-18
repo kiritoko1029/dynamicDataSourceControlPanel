@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration debug="false" scan="false">
+<configuration debug="true">
 
     <!-- Log file path -->
     <property name="log.path" value="logs" />
 
     <!-- Console log output -->
-    <appender name="console"
-              class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{MM-dd HH:mm:ss.SSS} %-5level [%logger{50}] - %msg%n
             </pattern>
         </encoder>
@@ -46,17 +45,11 @@
     </appender>
 
     <!-- Level: FATAL 0 ERROR 3 WARN 4 INFO 6 DEBUG 7 -->
-    <root level="info">
-        <!--{dev.start}-->
-        <!--        <appender-ref ref="console" />-->
-        <!--{dev.end}-->
-        <!--{alpha.start}
-        <appender-ref ref="fileRolling_info" />
-        {alpha.end}-->
-        <!--        {release.start}-->
-        <appender-ref ref="fileRolling_info" />
-        <!--        {release.end}-->
-        <appender-ref ref="fileRolling_error" />
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="fileRolling_error"/>
+        <appender-ref ref="fileRolling_info"/>
     </root>
     <!-- Framework level setting -->
     <include resource="config/logger-core.xml" />

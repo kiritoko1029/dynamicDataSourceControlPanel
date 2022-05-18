@@ -9,10 +9,11 @@
             <result property="poolName" column="poolName" jdbcType="VARCHAR"/>
             <result property="sqlText" column="sqlText" jdbcType="VARCHAR"/>
             <result property="args" column="args" jdbcType="VARCHAR"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         name,poolName,sqlText,
-        args
+        args,comment
     </sql>
 </mapper>
