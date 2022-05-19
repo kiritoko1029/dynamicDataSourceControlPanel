@@ -11,7 +11,8 @@
 在线接口文档 ：http://ip:8088/onlineDoc或者https://console-docs.apipost.cn/preview/17de6bd4ab90cd51/6a78ffcb10822da4
 
 ## 快速开始
-
+1. 将sqlite文件夹添加到jar包同级路径
+2. 运行：
 ```bas
 nohub java -jar 【你的jar包】 &
 ```
