@@ -19,16 +19,11 @@ public class APIController {
     private APIService apiService;
 
     //适合查询多条数据
-    @GetMapping("/getList")
-    public List getList(String sqlName) {
+    @PostMapping("/query/{sqlName}")
+    public List getList(@PathVariable String sqlName,@RequestBody Map<String,String> args) {
 
-        return apiService.getList(sqlName);
+        return apiService.getList(sqlName,args);
     }
 
-    //适合查询单条数据
-    @GetMapping("/getMap")
-    public Map getMap(String sqlName) {
-        return apiService.getMap(sqlName);
-    }
 
 }

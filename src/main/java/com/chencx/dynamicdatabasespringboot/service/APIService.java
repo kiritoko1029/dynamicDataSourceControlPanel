@@ -6,10 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface  APIService {
-
-    List getList(String sqlName);
-
-    Map getMap(String sqlName);
-
+    List getList(String sqlName,Map<String,String> args);
 
 }
