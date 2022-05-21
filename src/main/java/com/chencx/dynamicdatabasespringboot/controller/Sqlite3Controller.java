@@ -52,4 +52,17 @@ public class Sqlite3Controller {
     public int remove(String name){
         return  sqlite3Service.deleteSqlInfo(name);
     }
+
+    /**
+     * @description  更新sql信息
+     * @author chenxiangcai
+     * @date 2022/5/21 13:07
+     * @param sqlmap
+     * @return int
+     */
+    @PostMapping("/update")
+    public int update(@RequestBody Sqlmap sqlmap){
+        log.info(String.valueOf(sqlmap));
+        return sqlite3Service.updateSqlInfo(sqlmap);
+    }
 }

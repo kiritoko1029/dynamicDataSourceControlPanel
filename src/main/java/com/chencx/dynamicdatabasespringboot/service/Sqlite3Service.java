@@ -13,4 +13,6 @@ public interface Sqlite3Service {
     Map queryByName(String sqlName);
 
     int deleteSqlInfo(String sqlName);
+
+    int updateSqlInfo(Sqlmap sqlmap);
 }

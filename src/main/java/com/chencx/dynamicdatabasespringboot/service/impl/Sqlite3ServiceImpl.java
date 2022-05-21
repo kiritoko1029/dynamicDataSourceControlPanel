@@ -46,4 +46,11 @@ public class Sqlite3ServiceImpl implements Sqlite3Service {
         return jdbcTemplate.update("DELETE FROM SQLMAP WHERE name =?", args);
     }
 
+    @Override
+    public int updateSqlInfo(Sqlmap sqlmap) {
+        Object args[] = {sqlmap.getName(), sqlmap.getPoolName(), sqlmap.getSqlText(), sqlmap.getArgs(),sqlmap.getComment(),sqlmap.getName()};
+        return jdbcTemplate.update("UPDATE SQLMAP SET name=?,poolName=?,sqlText=?,args=?,comment=? WHERE name=?", args);
+
+    }
+
 }
