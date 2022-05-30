@@ -21,8 +21,6 @@ import java.util.Map;
 public class APIController {
     @Resource
     private APIService apiService;
-    @Autowired
-    ApplicationContext applicationContext;
     //适合查询多条数据
     @PostMapping("/query/{sqlName}")
     public List getList(@PathVariable String sqlName,@RequestBody(required = false) Map<String,String> args) {
