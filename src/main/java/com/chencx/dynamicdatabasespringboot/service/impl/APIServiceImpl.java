@@ -36,9 +36,10 @@ public class APIServiceImpl implements APIService {
         Map<String, String> sqlMap = sqlite3Service.queryByName(sqlName);
         DynamicDataSourceContextHolder.push(sqlMap.get("poolName"));//手动切换
         String originSql = sqlMap.get("sqlText");
-
-        for (String key : args.keySet()) {
-            originSql = originSql.replace("{"+key+"}","'"+args.get(key)+"'");
+        if(args!=null) {
+            for (String key : args.keySet()) {
+                originSql = originSql.replace("{" + key + "}", "'" + args.get(key) + "'");
+            }
         }
         return jdbcTemplate.queryForList(originSql);
     }

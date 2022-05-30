@@ -17,8 +17,9 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${log.path}/%d{yyyy-MM-dd}/info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>50MB</maxFileSize>
+                <maxFileSize>128MB</maxFileSize>
             </TimeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
             <pattern>%date [%thread] %-5level [%logger{50}] %file:%line - %msg%n
