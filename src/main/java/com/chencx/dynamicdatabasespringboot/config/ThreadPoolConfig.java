@@ -2,6 +2,7 @@ package com.chencx.dynamicdatabasespringboot.config;
 
 import com.chencx.dynamicdatabasespringboot.common.MyThreadPoolExecutor;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.*;
-
+@Slf4j
 /**
  * @ClassName ThreadPoolConfig
  * @Description 配置类中构建线程池实例，方便调用
@@ -32,7 +33,8 @@ public class ThreadPoolConfig {
     public Process creatProcessInstance() {
         LocalDate  localDate=LocalDate.now();
         String date = localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
-        String cmd = "tail -f "+logPath+date+"/info."+date+".0.log";
+        String cmd = "tail -f "+logPath+date+"/all."+date+".0.log";
+        log.info(cmd);
         Process process;
         try {
             process = Runtime.getRuntime().exec(cmd);

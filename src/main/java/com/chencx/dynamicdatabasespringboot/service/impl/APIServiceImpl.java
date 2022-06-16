@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+
 @Slf4j
 @Service
 public class APIServiceImpl implements APIService {
@@ -32,7 +34,7 @@ public class APIServiceImpl implements APIService {
      * @date 2022/5/16 14:27
      */
     @Override
-    public List getList(String sqlName,Map<String,String> args) {
+    public List<Map<String,Object>> getList(String sqlName, Map<String,String> args) {
         Map<String, String> sqlMap = sqlite3Service.queryByName(sqlName);
         DynamicDataSourceContextHolder.push(sqlMap.get("poolName"));//手动切换
         String originSql = sqlMap.get("sqlText");

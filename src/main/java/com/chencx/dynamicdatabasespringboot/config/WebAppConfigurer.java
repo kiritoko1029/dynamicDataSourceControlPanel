@@ -1,7 +1,6 @@
 package com.chencx.dynamicdatabasespringboot.config;
 
 import com.chencx.dynamicdatabasespringboot.common.DynamicDatasourceClearInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

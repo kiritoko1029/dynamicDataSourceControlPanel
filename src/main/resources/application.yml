@@ -4,6 +4,9 @@ spring:
   thymeleaf:
   cache: false
   mode: HTML5
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   datasource:
     dynamic:
       primary: sqLite
@@ -15,23 +18,31 @@ spring:
           url: jdbc:sqlite:./sqlite/querySql.db
           username:
           password:
-#        master-19:
-#          url: jdbc:db2://160.0.1.19:50000/appdb
-#          username: db2inst1
-#          password: password
-#          driver-class-name: com.ibm.db2.jcc.DB2Driver
-#        master-18:
-#          url: jdbc:db2://160.0.1.18:50000/appdb
-#          username: db2inst1
-#          password: password
-#          driver-class-name: com.ibm.db2.jcc.DB2Driver
-#        master-20:
-#          url: jdbc:db2://160.0.1.20:50000/appdb
-#          username: db2inst1
-#          password: password
-#          driver-class-name: com.ibm.db2.jcc.DB2Driver
+        master-19:
+          url: jdbc:db2://160.0.1.19:50000/appdb
+          username: db2inst1
+          password: password
+          driver-class-name: com.ibm.db2.jcc.DB2Driver
+        master-18:
+          url: jdbc:db2://160.0.1.18:50000/appdb
+          username: db2inst1
+          password: password
+          driver-class-name: com.ibm.db2.jcc.DB2Driver
+        master-20:
+          url: jdbc:db2://160.0.1.20:50000/appdb
+          username: db2inst1
+          password: password
+          driver-class-name: com.ibm.db2.jcc.DB2Driver
 # 日志配置
 logging:
   config: classpath:logback-spring.xml
 logs:
     path: ./logs/
+# knife4j配置
+knife4j:
+  enable: true
+  documents:
+    -
+      group: 2.0.9版本
+      name: 动态多数据源接口文档
+      locations: ./markdown/*
