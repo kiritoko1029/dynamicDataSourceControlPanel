@@ -114,21 +114,18 @@ public class WebSocketServiceImpl implements WebSocketService {
     public void sendMessage2() throws IOException {
 
         //需要另外启动线程进行读取，防止输入流阻塞当前线程
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    log.info("线程：" + Thread.currentThread().getName() + "正在运行...");
-                    BufferedReader br = new BufferedReader(
-                            new InputStreamReader(process.getInputStream(), "UTF-8"));
-                    String lineOne;
-                    while ((lineOne = br.readLine()) != null) {
-                        simpMessagingTemplate.convertAndSend("/topic/getLogs", lineOne + "\n");
-                    }
-                    br.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
+        executorService.execute(() -> {
+            try {
+                log.info("线程：" + Thread.currentThread().getName() + "正在运行...");
+                BufferedReader br = new BufferedReader(
+                        new InputStreamReader(process.getInputStream(), "UTF-8"));
+                String lineOne;
+                while ((lineOne = br.readLine()) != null) {
+                    simpMessagingTemplate.convertAndSend("/topic/getLogs", lineOne + "\n");
                 }
+                br.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
         //主线程读取错误输出流数据
