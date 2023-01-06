@@ -10,7 +10,7 @@ spring:
   datasource:
     dynamic:
       primary: sqLite
-      p6spy: true
+      p6spy: false
       strict: false
       datasource:
         sqLite:
